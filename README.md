@@ -186,6 +186,6 @@ This project is licensed under the **MIT License** — see the [LICENSE](./LICEN
 ## 📬 Contact
 
 **Kim Delmoro**
-GitHub: [@KimDelmoroProjects](https://github.com/KimDelmoroProjects)
+GitHub: [@KimDelmoro2008](https://github.com/KimDelmoro2008)
 
 If you find this repo useful for your own C++ practice, feel free to ⭐ star it!
