@@ -118,8 +118,8 @@ double computeTotal(int qty, double price) {
     return qty * price;
 }
 
-
 int main() {
     ShowMenu();
     return 0;
+
 }
