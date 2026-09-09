@@ -1,8 +1,6 @@
 # C++ Practices
 
-![Language](https://img.shields.io/badge/language-C%2B%2B-00599C?logo=cplusplus)
-![Status](https://img.shields.io/badge/status-active-brightgreen)
-![License](https://img.shields.io/badge/license-MIT-blue)
+[![Language](https://img.shields.io/badge/language-C%2B%2B-00599C?logo=cplusplus)](https://img.shields.io/badge/language-C%2B%2B-00599C?logo=cplusplus) [![Status](https://img.shields.io/badge/status-active-brightgreen)](https://img.shields.io/badge/status-active-brightgreen) [![License](https://img.shields.io/badge/license-MIT-blue)](https://img.shields.io/badge/license-MIT-blue)
 
 A growing collection of C++ programs written to practice and strengthen core programming fundamentals — from basic I/O and control flow to small simulated real-world systems (ATMs, payroll, ticketing, queues, and more).
 
@@ -17,9 +15,9 @@ Each folder is a self-contained mini-project: a focused problem, a clean solutio
 - [Repository Structure](#-repository-structure)
 - [Projects](#-projects)
 - [Getting Started](#-getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Cloning the Repository](#cloning-the-repository)
-  - [Compiling a Program](#compiling-a-program)
+  * [Prerequisites](#prerequisites)
+  * [Cloning the Repository](#cloning-the-repository)
+  * [Compiling a Program](#compiling-a-program)
 - [Learning Focus](#-learning-focus)
 - [Roadmap](#-roadmap)
 - [Contributing](#-contributing)
@@ -38,12 +36,12 @@ The goal isn't just working code, but code that's **readable, organized, and eas
 
 ## 🧰 Tech Stack
 
-| Tool | Purpose |
-|---|---|
-| **C++** | Core language for all programs |
-| **g++ / GCC** | Compiling and running programs locally |
-| **VS Code** | Primary editor (see `.vscode/` config) |
-| **Git & GitHub** | Version control and project hosting |
+| Tool             | Purpose                                |
+| ---------------- | -------------------------------------- |
+| **C++**          | Core language for all programs         |
+| **g++ / GCC**    | Compiling and running programs locally |
+| **VS Code**      | Primary editor (see `.vscode/` config) |
+| **Git & GitHub** | Version control and project hosting    |
 
 ---
 
@@ -55,6 +53,7 @@ C-Practices/
 ├── 03/                                   # Early practice set
 ├── ATM Withdrawal Simulator/
 ├── Another Calculator/
+├── Convenience Store Self-Checkout/
 ├── Drawing using cout/
 ├── Electricity Bill Calculator/
 ├── Employee Payroll Calculator/
@@ -62,6 +61,8 @@ C-Practices/
 ├── Food Ordering System/
 ├── Grading System/
 ├── Hospital Emergency Room Queue System/
+├── Internet Cafe Timer/
+├── Iterative Control Structure/
 ├── Movie Ticketing System/
 ├── Name Recognition/
 ├── Online Quiz Grading System/
@@ -74,6 +75,7 @@ C-Practices/
 ├── Self Introduction with double, int/
 ├── Simple Calculator/
 ├── Simple Introduction/
+├── TIP ATM Machine/
 ├── To-do List System/
 ├── Training Power Reps/
 ├── LICENSE
@@ -86,31 +88,35 @@ Each project folder contains its own `.cpp` source file(s) and can be built and 
 
 ## 📁 Projects
 
-| # | Project | Description | Core Concepts |
-|---|---|---|---|
-| 1 | [ATM Withdrawal Simulator](./ATM%20Withdrawal%20Simulator) | Simulates ATM cash withdrawal logic, including balance and limit checks | Conditionals, functions |
-| 2 | [Another Calculator](./Another%20Calculator) | A second take on a basic arithmetic calculator | Switch/if statements, arithmetic operators |
-| 3 | [Drawing using cout](./Drawing%20using%20cout) | Console-based shapes/patterns rendered with `cout` | Loops, formatting |
-| 4 | [Electricity Bill Calculator](./Electricity%20Bill%20Calculator) | Computes electricity charges based on units consumed | Conditionals, arithmetic |
-| 5 | [Employee Payroll Calculator](./Employee%20Payroll%20Calculator) | Calculates employee pay from rate and hours/deductions | Functions, data types |
-| 6 | [Error Checker](./Error%20Checker) | Validates user input and flags invalid entries | Input validation, conditionals |
-| 7 | [Food Ordering System](./Food%20Ordering%20System%2C) | Console-based food ordering flow with menu and totals | Arrays/structs, loops |
-| 8 | [Grading System](./Grading%20System) | Converts numeric scores into letter grades | Conditionals, functions |
-| 9 | [Hospital Emergency Room Queue System](./Hospital%20Emergency%20Room%20Queue%20System) | Simulates a patient queue for an ER | Queues, structs |
-| 10 | [Movie Ticketing System](./Movie%20Ticketing%20System) | Simulates booking movie tickets with seat/price logic | Structs, arrays |
-| 11 | [Name Recognition](./Name%20Recognition) | Basic string handling and name recognition logic | Strings |
-| 12 | [Online Quiz Grading System](./Online%20Quiz%20Grading%20System) | Automatically grades quiz answers | Arrays, conditionals |
-| 13 | [Online Shopping System](./Online%20Shopping%20System) | Simulates an online cart and checkout process | Structs, loops, arithmetic |
-| 14 | [Parking Lot Fee Calculator](./Parking%20Lot%20Fee%20Calculator) | Calculates parking fees based on duration | Arithmetic, conditionals |
-| 15 | [Restaurant System](./Restaurant%20System) | Simple restaurant ordering/management simulation | Structs, functions |
-| 16 | [Review](./Review) | General review and mixed practice exercises | Mixed fundamentals |
-| 17 | [School Login Portal](./School%20Login%20Portal) | Simulated login/authentication flow for a school system | Conditionals, strings |
-| 18 | [Score Checker](./Score%20Checker) | Checks and validates scores against set criteria | Conditionals |
-| 19 | [Self Introduction with double, int](./Self%20Introduction%20with%20double%2C%20int) | Practice using `int` and `double` data types together | Data types |
-| 20 | [Simple Calculator](./Simple%20Calculator) | A beginner-friendly arithmetic calculator | Switch/if statements |
-| 21 | [Simple Introduction](./Simple%20Introduction) | A first "hello world"-style introduction program | Basic I/O |
-| 22 | [To-do List System](./To-do%20List%20System) | Console-based to-do list manager | Arrays, loops |
-| 23 | [Training Power Reps](./Training%20Power%20Reps) | Practice reps/exercises for reinforcing fundamentals | Mixed fundamentals |
+| #  | Project                                                                                | Description                                                              | Core Concepts                              |
+| --- | --------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ------------------------------------------- |
+| 1  | [ATM Withdrawal Simulator](./ATM%20Withdrawal%20Simulator)                             | Simulates ATM cash withdrawal logic, including balance and limit checks   | Conditionals, functions                    |
+| 2  | [Another Calculator](./Another%20Calculator)                                           | A second take on a basic arithmetic calculator                            | Switch/if statements, arithmetic operators |
+| 3  | [Convenience Store Self-Checkout](./Convenience%20Store%20Self-Checkout)               | Self-checkout kiosk flow: pick an item, set quantity, and print a receipt | Functions, switch statements, loops        |
+| 4  | [Drawing using cout](./Drawing%20using%20cout)                                         | Console-based shapes/patterns rendered with `cout`                        | Loops, formatting                          |
+| 5  | [Electricity Bill Calculator](./Electricity%20Bill%20Calculator)                       | Computes electricity charges based on units consumed                      | Conditionals, arithmetic                   |
+| 6  | [Employee Payroll Calculator](./Employee%20Payroll%20Calculator)                       | Calculates employee pay from rate and hours/deductions                    | Functions, data types                      |
+| 7  | [Error Checker](./Error%20Checker)                                                     | Validates user input and flags invalid entries                            | Input validation, conditionals             |
+| 8  | [Food Ordering System](./Food%20Ordering%20System%2C)                                  | Console-based food ordering flow with menu and totals                     | Arrays/structs, loops                      |
+| 9  | [Grading System](./Grading%20System)                                                   | Converts numeric scores into letter grades                                | Conditionals, functions                    |
+| 10 | [Hospital Emergency Room Queue System](./Hospital%20Emergency%20Room%20Queue%20System) | Simulates a patient queue for an ER                                       | Queues, structs                            |
+| 11 | [Internet Cafe Timer](./Internet%20Cafe%20Timer)                                       | Bills a customer for an internet cafe package plus overtime hours         | Functions, conditionals, arithmetic        |
+| 12 | [Iterative Control Structure](./Iterative%20Control%20Structure)                       | Loop drills: sum/product of inputs, averages, and divisibility sums        | Loops (`while`, `for`), conditionals       |
+| 13 | [Movie Ticketing System](./Movie%20Ticketing%20System)                                 | Simulates booking movie tickets with seat/price logic                     | Structs, arrays                            |
+| 14 | [Name Recognition](./Name%20Recognition)                                               | Basic string handling and name recognition logic                          | Strings                                    |
+| 15 | [Online Quiz Grading System](./Online%20Quiz%20Grading%20System)                       | Automatically grades quiz answers                                         | Arrays, conditionals                       |
+| 16 | [Online Shopping System](./Online%20Shopping%20System)                                 | Simulates an online cart and checkout process                             | Structs, loops, arithmetic                 |
+| 17 | [Parking Lot Fee Calculator](./Parking%20Lot%20Fee%20Calculator)                       | Calculates parking fees based on duration                                 | Arithmetic, conditionals                   |
+| 18 | [Restaurant System](./Restaurant%20System)                                             | Simple restaurant ordering/management simulation                          | Structs, functions                         |
+| 19 | [Review](./Review)                                                                     | General review and mixed practice exercises                               | Mixed fundamentals                         |
+| 20 | [School Login Portal](./School%20Login%20Portal)                                       | Simulated login/authentication flow for a school system                  | Conditionals, strings                      |
+| 21 | [Score Checker](./Score%20Checker)                                                     | Checks and validates scores against set criteria                          | Conditionals                               |
+| 22 | [Self Introduction with double, int](./Self%20Introduction%20with%20double%2C%20int)   | Practice using `int` and `double` data types together                     | Data types                                 |
+| 23 | [Simple Calculator](./Simple%20Calculator)                                             | A beginner-friendly arithmetic calculator                                 | Switch/if statements                       |
+| 24 | [Simple Introduction](./Simple%20Introduction)                                         | A first "hello world"-style introduction program                          | Basic I/O                                  |
+| 25 | [TIP ATM Machine](./TIP%20ATM%20Machine)                                               | ATM menu (balance, deposit, withdrawal) combining functions, selection, and iteration | Functions, conditionals, loops  |
+| 26 | [To-do List System](./To-do%20List%20System)                                           | Console-based to-do list manager                                          | Arrays, loops                              |
+| 27 | [Training Power Reps](./Training%20Power%20Reps)                                       | Practice reps/exercises for reinforcing fundamentals                      | Mixed fundamentals                         |
 
 > 📝 New programs are added as I continue practicing — this table is updated alongside the repo.
 
@@ -125,8 +131,8 @@ Each project folder contains its own `.cpp` source file(s) and can be built and 
 
 ### Cloning the Repository
 
-```bash
-git clone https://github.com/KimDelmoroProjects/C-Practices.git
+```
+git clone https://github.com/KimDelmoro2008/C-Practices.git
 cd C-Practices
 ```
 
@@ -134,7 +140,7 @@ cd C-Practices
 
 Navigate into any project folder and compile its `.cpp` file:
 
-```bash
+```
 cd "Simple Calculator"
 g++ main.cpp -o program
 ./program        # On Windows: program.exe
@@ -150,7 +156,7 @@ This repository is intentionally scoped around fundamentals, including:
 
 - Variables, data types, and type conversion
 - Conditional logic (`if`, `else if`, `switch`)
-- Loops (`for`, `while`) — kept intentionally free of `do-while`
+- Loops (`for`, `while`, `do-while`)
 - Functions and parameter passing
 - Arrays and structs
 - Simple simulated systems that combine the above into something practical
