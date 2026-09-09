@@ -7,6 +7,36 @@ int main() {
     char ProcessYN;
     int NumEmployees;
 
+    // Admin Credentials
+    string AdminUser = "KimDelmoro";
+    string AdminPassword = "IT11S1";
+
+    string AdminUserInput;
+    string AdminPasswordInput;
+
+    int LoginAttempt = 0; // Attempts for 
+
+    cout << "\n --- Admin Login --- \n";
+
+    cout << "\n Enter Admin User : ";
+    cin >> AdminUserInput;
+
+    while (LoginAttempt < 3) {
+        cout << "\n Enter Admin Password : ";
+        cin >> AdminPasswordInput;
+
+        if (AdminPasswordInput == AdminPassword ) {
+            cout << "\n Welcome, Admin. \n";
+            break;
+        } else {
+            LoginAttempt++;
+            cout << "\n Incorrect Password." << endl;
+            cout << "\n Attempts Remaining : " << 3 - LoginAttempt << endl;
+        }
+    } 
+
+
+
     cout << "How many Employees do you want to process? : ";
     cin >> NumEmployees;
 
@@ -17,30 +47,25 @@ int main() {
         cout << "\n Thank you!";
         return 0;
     } else {
-        
-    }
-
-
-    for (int e = 1; e <= NumEmployees; e++) {
+         for (int e = 1; e <= NumEmployees; e++) {
     
+
     string LateLetter, GVName;
-    double wage;
     char Late;
-    int OvertimePay;
-    int choice, TaxAmount, TotalWage;
-    int deduction = 250;
-    int Regular = 500, Manager = 1000, Executive = 5000;
-    int GovChoice;
+    double OvertimePay, TaxAmount, TotalWage, wage;
+
+    
+    int deduction = 250; // Deduction
+    int Regular = 500, Manager = 1000, Executive = 5000; // Work Position's Pay
+
+    int GovChoice, choice;
 
     string Name[100], PositionName[100];
     double rate[100];
-    double hoursWorked[100];
     int Overtime[100];
 
 
     cout << "--- Employee # " << e << " ---" << endl;
-
-
     cout << "Enter Employee Name: ";
     cin >> Name[e];
 
@@ -54,11 +79,20 @@ int main() {
     cin >> Overtime[e];
 
 
-    cout << "Is Employee Late? : " << endl;
-    cout << "[Y] Yes" << endl;
-    cout << "[N] No" << endl;
-    cout << "Enter your choice: ";
-    cin >> Late;
+    if (Overtime[e] < 1 || Overtime[e] > 6) {
+        cout << "\nMaximum of 6 hours only or Invalid Input.";
+        break;
+    } // Users prevents from entering number greater than 6
+
+    // Late System
+    do {
+        cout << "Is Employee Late? : " << endl;
+        cout << "[Y] Yes" << endl;
+        cout << "[N] No" << endl;
+        cout << "Enter your choice: ";
+        cin >> Late;
+    } while (Late != 'Y' && Late != 'y' && Late != 'N' && Late != 'n'); // Users can only Input Y and N
+
     
 
     cout << " --- Position --- " << endl;
@@ -82,20 +116,21 @@ int main() {
     cout << "Enter your Government Deduction: ";
     cin >> GovChoice;
 
+
     if (GovChoice < 1 || GovChoice > 3) {
         cout << "\nInvalid Choice.";
         break;
     }
 
 
-    /* Checks if User has Overtime Hours*/
+    // Checks if User has Overtime Hours 
     if (Overtime[e] > 6) {
         Overtime[e] = 6;
    }
 
 
     OvertimePay = Overtime[e] * (rate[e] * 1.5);
-    wage = wage + OvertimePay;
+    wage = wage + OvertimePay; // Wage = Gross Pay
 
 
     if (choice == 1) {
@@ -118,7 +153,7 @@ int main() {
     }
 
 
-    /* Late System*/
+    // Late Deduction
    if (Late == 'Y' || Late == 'y') {
         LateLetter = "Yes";
         wage = wage - deduction;
@@ -128,7 +163,7 @@ int main() {
    }
 
 
-    /* Government Deductions*/
+    // Government Deductions
     double sssDeduction = wage * 0.045;
     double philhealthDeduction = wage * 0.02;
     double pagIbigDeduction = 100;
@@ -146,6 +181,7 @@ int main() {
             TotalWage = TotalWage - pagIbigDeduction;
    }
    
+   // Employee Receipt
    cout << "--- Employee Payroll Calculator ---" << endl;
    cout << "Employee Name : " << Name[e] << endl;
    cout << "Hourly Rate : " << rate[e] << endl;
@@ -160,3 +196,7 @@ int main() {
    cout << "--- Employee Payroll Calculator ---" << endl;
 }
 }
+    }
+
+
+   
