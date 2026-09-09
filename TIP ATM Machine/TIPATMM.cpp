@@ -12,6 +12,14 @@ double withdrawAmount(double bal);
 // --- # Prints Menu # ---
 void showMenu() {
 
+    cout<<"\n ***********************************************************";
+    cout<<"\n *  TECHNOLOGICAL INSTITUTE OF THE PHILIPPINES QUEZON CITY *";
+    cout<<"\n *      	  First Semester S.Y. 2023-2024        *";
+    cout<<"\n *      	  ITE001 Computer Programming 1       *";
+    cout<<"\n *  YOUR NAME	: GROUP 3			SECTION  : IT11S1            *";
+    cout<<"\n ***********************************************************";
+
+
     cout << "\n --- # T.I.P ATM Machine # --- \n";
     cout << "\n -- # [1] Balance";
     cout << "\n -- # [2] Deposit";
