@@ -173,6 +173,8 @@ int main() {
 
 
             // Giving Work Position a Name
+            // Added Wage Value
+            // Added TaxAmount & TotalWage a value
             if (choice == 1) {
                 PositionName[e] = "Regular";
                 wage = Regular * rate[e];
