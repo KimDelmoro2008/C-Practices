@@ -201,6 +201,8 @@ int main() {
             double grossPay = wage + OvertimePay + Honorarium + Adjustment;
             double trainLawTax = grossPay * 0.10;
 
+            // Added GV (Goverment) a Name value
+            // Added Each Government Choice in a total wage
             switch (GovChoice) {
                 case 1:
                     GVName = "SSS";
