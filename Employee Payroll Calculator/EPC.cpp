@@ -88,6 +88,14 @@ int main() {
                 break;
             }
 
+            // Overtime Pay Computation
+            if (Overtime[e] > 6) {
+                Overtime[e] = 6;
+            }
+
+            OvertimePay = Overtime[e] * (rate[e] * 1.5);
+            wage = 0; // Fixed Value because there is no value for wage yet
+
             cout << "\n  --- # Honorarium # --- " << endl;
             cout << "Enter Honorarium amount: ";
             cin >> Honorarium;
@@ -99,17 +107,19 @@ int main() {
             cout << "\n  --- # Absences # --- " << endl;
             cout << "Enter absences count: ";
             cin >> absencesCount;
-            Absences = absencesCount * (rate[e] * 0.5);
+            Absences = absencesCount * (rate[e] * 0.5); // Absences Deduction
 
             cout << "\n  --- # Tardiness # --- " << endl;
             cout << "Enter tardiness in minutes: ";
             cin >> tardinessMinutes;
-            Tardiness = tardinessMinutes * (rate[e] * 0.05);
+            Tardiness = tardinessMinutes * (rate[e] * 0.05); // Tardiness Deduction
 
             cout << "\n  --- # Loan Deduction # --- " << endl;
             cout << "Enter loan deduction amount: ";
             cin >> LoanDeduction;
 
+            // Error Prevention of Late Employee Selection
+            // Prevents user from entering position display menu while their input was not Y and N
             do {
                 cout << "Is Employee Late? : " << endl;
                 cout << "[Y] Yes" << endl;
@@ -118,42 +128,51 @@ int main() {
                 cin >> Late;
             } while (Late != 'Y' && Late != 'y' && Late != 'N' && Late != 'n');
 
-            cout << " --- # Position # --- " << endl;
-            cout << "[1] Regular" << endl;
-            cout << "[2] Manager" << endl;
-            cout << "[3] Executive" << endl;
-            cout << " --- Position --- " << endl;
-            cout << "Enter your position number: ";
-            cin >> choice;
+            // Adding LateLetter a value for Display
+            if (Late == 'Y' || Late == 'y') {
+                LateLetter = "Yes";
+                wage = wage - deduction;
+            } else {
+                LateLetter = "No";
+            }
 
+            // Prevents user from entering number greater than 3
+            do {
+
+                cout << " --- # Position # --- " << endl;
+                cout << "[1] Regular" << endl;
+                cout << "[2] Manager" << endl;
+                cout << "[3] Executive" << endl;
+                cout << " --- Position --- " << endl;
+                cout << "Enter your position number: ";
+                cin >> choice;
+
+            } while (choice < 1 || choice > 3);
+
+            // Error Prevention of Work Position Selection
             if (choice < 1 || choice > 3) {
                 cout << "\nInvalid Choice.";
                 break;
             }
 
+            // Government Deduction Selection
             do {
-
                 cout << " --- # Select Government Deduction # --- " << endl;
                 cout << "[1] SSS" << endl;
                 cout << "[2] PhilHealth" << endl;
                 cout << "[3] Pag-Ibig" << endl;
                 cout << "Enter your Government Deduction: ";
                 cin >> GovChoice;
+            } while (GovChoice < 0 || GovChoice > 3);
 
-            } while (GovChoice < 0 || GovChoice > 6);
-
+            // Error Prevention of Goverment Choice
             if (GovChoice < 1 || GovChoice > 3) {
                 cout << "\nInvalid Choice.";
                 break;
             }
 
-            if (Overtime[e] > 6) {
-                Overtime[e] = 6;
-            }
 
-            OvertimePay = Overtime[e] * (rate[e] * 1.5);
-            wage = 0;
-
+            // Giving Work Position a Name
             if (choice == 1) {
                 PositionName[e] = "Regular";
                 wage = Regular * rate[e];
@@ -173,13 +192,7 @@ int main() {
                 cout << "Invalid Choice";
             }
 
-            if (Late == 'Y' || Late == 'y') {
-                LateLetter = "Yes";
-                wage = wage - deduction;
-            } else {
-                LateLetter = "No";
-            }
-
+            // Deductions
             double sssDeduction = wage * 0.045;
             double philhealthDeduction = wage * 0.02;
             double pagIbigDeduction = 100;
@@ -201,6 +214,7 @@ int main() {
                     break;
             }
 
+            // Total Wage (Includes deduction and total pay)
             TotalWage = grossPay - TaxAmount - Absences - Tardiness - LoanDeduction - sssDeduction - philhealthDeduction - pagIbigDeduction;
 
             cout << "\n --- Employee Payroll Calculator --- \n" << endl;
