@@ -75,14 +75,12 @@ int main() {
             cin >> rate[e];
 
             do {
-
                 cout << "Enter Overtime Hour: ";
                 cout << "(Maximum Overtime Hours : 6 Hours): ";
                 cin >> Overtime[e];
-
             } while (Overtime[e] < 0 || Overtime[e] > 6);
 
-  
+
             if (Overtime[e] < 1 || Overtime[e] > 6) {
                 cout << "\nMaximum of 6 hours only or Invalid Input.";
                 break;
