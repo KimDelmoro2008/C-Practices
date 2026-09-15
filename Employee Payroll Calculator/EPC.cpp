@@ -88,13 +88,13 @@ int main() {
                 break;
             }
 
-            // Overtime Pay Computation
+            
             if (Overtime[e] > 6) {
-                Overtime[e] = 6;
+                Overtime[e] = 6; //            Overtime Pay Computation
             }
 
             OvertimePay = Overtime[e] * (rate[e] * 1.5);
-            wage = 0; // Fixed Value because there is no value for wage yet
+            wage = 0;            // Fixed Value because there is no value for wage yet
 
             cout << "\n  --- # Honorarium # --- " << endl;
             cout << "Enter Honorarium amount: ";
@@ -107,12 +107,12 @@ int main() {
             cout << "\n  --- # Absences # --- " << endl;
             cout << "Enter absences count: ";
             cin >> absencesCount;
-            Absences = absencesCount * (rate[e] * 0.5); // Absences Deduction
+            Absences = absencesCount * (rate[e] * 0.5);           // Absences Deduction
 
             cout << "\n  --- # Tardiness # --- " << endl;
             cout << "Enter tardiness in minutes: ";
             cin >> tardinessMinutes;
-            Tardiness = tardinessMinutes * (rate[e] * 0.05); // Tardiness Deduction
+            Tardiness = tardinessMinutes * (rate[e] * 0.05);            // Tardiness Deduction
 
             cout << "\n  --- # Loan Deduction # --- " << endl;
             cout << "Enter loan deduction amount: ";
@@ -173,8 +173,8 @@ int main() {
 
 
             // Giving Work Position a Name
-            // Added Wage Value
-            // Added TaxAmount & TotalWage a value
+                                                        // Added Wage Value
+                                                        // Added TaxAmount & TotalWage a value
             if (choice == 1) {
                 PositionName[e] = "Regular";
                 wage = Regular * rate[e];
