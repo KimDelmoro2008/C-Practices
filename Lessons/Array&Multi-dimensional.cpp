@@ -18,6 +18,7 @@ int main() {
         {7, 8, 9}
     };
 
+
     cout << "2D Array elements:" << endl;
     for (int row = 0; row < 3; row++) {
         for (int col = 0; col < 3; col++) {
@@ -25,6 +26,9 @@ int main() {
         }
         cout << endl; // new line after each row
     }
+
+    cout << matrix[1][2] << endl;
+    cout << numbers[0];
 
     return 0;
 }
