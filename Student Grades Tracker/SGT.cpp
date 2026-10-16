@@ -28,7 +28,7 @@ int main() {
             // Totals the Grades of every student
             // [0][0] - 1st Subject [0][1] - 2nd Subject (For 1st Student)
             // [1][0] - 1st Subeject [1][1] - 2nd Subject (For 2nd Student)
-            // [2][0] - 1st Subeject [2][1] - 2nd Subject (For 2nd Student)
+            // [2][0] - 1st Subeject [2][1] - 2nd Subject (For 3nd Student)
             total += studentGrades[student][subject];
         }
 
