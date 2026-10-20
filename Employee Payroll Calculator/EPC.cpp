@@ -21,17 +21,21 @@ int main() {
     double rate[100];
     int EmployeeID[100];
 
-    cout << "\n --- Admin Login --- \n";
+    int number;
+    bool letter_invalidate;
+    char leftover;
+
+    cout << "\n --- Admin Login --- ";
 
     cout << "\n Enter Admin User : ";
     cin >> AdminUserInput;
 
     while (LoginAttempt < 3) {
-        cout << "\n Enter Admin Password : ";
+        cout << " Enter Admin Password : ";
         cin >> AdminPasswordInput;
 
         if (AdminPasswordInput == AdminPassword) {
-            cout << "\n Welcome, Admin. \n";
+            cout << " Welcome, Admin. ";
             break;
         } else {
             LoginAttempt++;
@@ -45,11 +49,43 @@ int main() {
         return 0;
     }
 
-    cout << "How many Employees do you want to process? : ";
-    cin >> NumEmployees;
+    // Maximum of 50 Employees to process
+    do {
+        cout << "\nHow many Employees do you want to process? : ";
+        
+        if (cin >> number) {
+                if (NumEmployees <= 0 || NumEmployees > 50) {
+                cout << "\n Maximum of 50 Employees to process";
+                letter_invalidate = false;
+            
+            } else {
+                letter_invalidate = true;
+            }
 
-    cout << "Do you want to process these Employees (Y/N): ";
-    cin >> ProcessYN;
+            cin.clear();
+            while (cin.get(leftover) && leftover != '\n');
+        } else {
+            cout << "Invalid Input." << endl;
+            letter_invalidate = false;
+
+            cin.clear();
+            while (cin.get(leftover) && leftover != '\n');
+        }
+
+
+    } while (NumEmployees <= 0 || NumEmployees > 50);
+
+
+    // Y/N Validation Process
+    do {
+        cout << "Do you want to process these Employees (Y/N): ";
+        cin >> ProcessYN;
+
+        if (ProcessYN != 'Y' && ProcessYN != 'y' && ProcessYN != 'N' && ProcessYN != 'n') {
+            cout << "Invalid Input. Only (Y/N)" << endl;
+        }
+    } while (ProcessYN != 'Y' && ProcessYN != 'y' && ProcessYN != 'N' && ProcessYN != 'n');
+
 
     if (ProcessYN == 'N' || ProcessYN == 'n') {
         cout << "\n Thank you!";
@@ -67,22 +103,45 @@ int main() {
         int GovChoice, choice;
         int absencesCount = 0, tardinessMinutes = 0;
 
-            cout << "--- Employee # " << e << " ---" << endl;
-            cout << "Enter Employee Name : ";
-            cin >> Name[e];
+        int number;
+        bool letter_invalidate;
+        char leftover;
 
-            cout << "Enter Employee ID : ";
-            cin >> EmployeeID[e];
+        cout << "--- Employee # " << e << " ---" << endl;
+        cout << "Enter Employee Name : " << endl;
+        cin >> Name[e];
 
-            do {
-                cout << "Enter hourly rate: ";
-                cin >> rate[e];
+        cout << "Enter Employee ID : ";
+        cin >> EmployeeID[e];
 
-                if (rate[e] < 0 || rate[e] > 8) {
-                    cout << "Maximum of 8 hours rate only." << endl;
+        do {
+            cout << "Enter hourly rate: ";
+
+            
+            if (cin >> number) {
+                
+                
+                if (number < 0 || number > 8) {
+                    cout << "Maximum of 8 hours rate only. Please try again." << endl;
+                    letter_invalidate = false; 
+                } else {
+                    rate[e] = number;          
+                    letter_invalidate = true;  
                 }
 
-            } while (rate[e] < 0 || rate[e] > 8);
+                cin.clear();
+                while (cin.get(leftover) && leftover != '\n');
+
+            } else {
+
+                cout << "Invalid input! Letters are not allowed." << endl;
+                letter_invalidate = false; 
+
+                cin.clear(); 
+                while (cin.get(leftover) && leftover != '\n');
+            }
+
+        } while (!letter_invalidate);
 
             do {
                 cout << "Enter Overtime Hour: ";
